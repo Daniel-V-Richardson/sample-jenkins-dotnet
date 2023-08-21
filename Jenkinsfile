@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh '''
-                dotnet build User.csproj
+                dotnet --version
                 '''
             }
         }
