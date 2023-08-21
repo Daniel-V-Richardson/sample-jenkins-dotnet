@@ -1,0 +1,15 @@
+.containerEl {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #e1eec3;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.cardEl{
+    width:25rem;
+    border-radius:20px !important;
+}
+.textEl{
+    text-align:justify-all !important;
+}

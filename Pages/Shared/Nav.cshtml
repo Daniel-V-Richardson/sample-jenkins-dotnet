@@ -1,0 +1,89 @@
+﻿@model User.Pages.IndexModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+    .nav-container {
+        display:flex;
+        position:fixed;
+        margin:auto;
+        z-index:100;
+        width:100%;
+        padding-left:10%;
+        padding-right:10%;
+        justify-content:space-between;
+        align-items:center;
+        height:10%;
+       background-color: white;
+            box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    }
+    .logo-container {
+        width:20%;
+        object-fit:cover;
+    }
+    .left-nav{
+        width:50%;
+    }
+    .right-nav{
+        display:flex;
+        flex-direction:row;
+        gap:20px;
+        margin:auto;
+        align-items:center;
+        width:50%;
+        
+    }
+    .logo-img {
+        width:100%;
+        height:100%;
+    }
+    .link{
+        text-decoration:none;
+        color: black;
+        font-weight:bold;
+        font-size:1.3rem;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+        .login-status{
+            color:white;
+            padding:15px;
+            border-radius:50px;
+            align-items: center;
+            cursor:pointer;
+            font-weight: bold;
+            font-size: 1.3rem;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color:black;
+        }
+
+</style>
+</head>
+<nav>
+    <div class="nav-container">
+        <div class="left-nav">
+            <div class="logo-container">
+                <img class="logo-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pro-inspector.net%2Fwp-content%2Fuploads%2F2022%2F03%2Fpro-inspector-logo.png&f=1&nofb=1&ipt=ad69d25189a8218e47550ae5140ee476a11bcc7a853f9fde9cc286c5c06900bc&ipo=images" alt="Pro-Inspector" " />
+            </div>
+        </div>
+        <div class="right-nav">
+            <a href="/About" class="link">About Us</a>
+            <a href="/contact" class="link">Contact Us</a>
+            <a href="/partner" class="link">Partners</a>
+            <div class="login-status">
+                @Model.Username
+                </div>
+         @*   <form method="post">
+                <button class="logout-btn" type="submit">
+                    Logout
+                </button>
+            </form>
+            *@
+        </div>
+    </div>
+</nav>
+</html>
+
+

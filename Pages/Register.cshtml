@@ -1,0 +1,155 @@
+﻿@page
+@model User.Pages.RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create an Account</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            width:100%;
+            display:flex;
+            background-color:white;
+            border-radius:20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding:10px;
+        }
+        .left-container {
+            width:40%;
+        }
+        .right-container {
+            width:60%;
+        }
+
+        .landing-image-container{
+            width:100%;
+            object-fit: cover;
+            border-radius: 20px;
+            padding:10px;
+            margin-top:20px;
+            background-color: #efeef7;
+           }
+
+        .landing-img {
+            width:100%;
+        }
+
+        .logo-img-container{
+            width:40%;
+            object-fit:cover;
+        }
+        .logo-img {
+            width:100%;
+        }
+
+        .form-container{
+            width:90%;
+            padding:20px;
+            display:flex;
+            flex-direction:column;
+            margin:auto;
+
+        }
+        .form-container h2 {
+            margin-bottom:10px;
+            font-size:2.3rem;
+            text-align:center;
+        }
+
+        .form-container p {
+            margin-bottom: 20px;
+            font-size:1.2rem;
+            text-align: center;
+            margin-bottom:30px;
+        }
+        label{
+           font-weight: bold;
+        }
+        .form-input{
+            display:flex;
+        }
+
+        .register-btn{
+            border-radius:10px;
+            padding:10px;
+            font-weight:600;
+            color:white;
+            width:100%;
+            background-color: #845ef2;
+            border:none;
+            font-size: 1.4rem;
+        }
+        .login-btn {
+            font-size:1.4rem; 
+            border-radius:10px;
+            padding:10px;
+            font-weight:600;
+            color:black;
+            width:100%;
+            background-color: #ededf9;
+            border:none;
+        }
+        .btn-container{ 
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="left-container">
+        <div class="logo-img-container">
+                <img class="logo-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pro-inspector.net%2Fwp-content%2Fuploads%2F2022%2F03%2Fpro-inspector-logo.png&f=1&nofb=1&ipt=ad69d25189a8218e47550ae5140ee476a11bcc7a853f9fde9cc286c5c06900bc&ipo=images"alt="Pro-Inspector" />
+        </div>
+            <div class="form-container">
+                <h2>Create an Account</h2>
+                <p>Sign up now and unlock exclusive access!</p>
+                <form method="post">
+                    <div class="form-group">
+                        <label for="Username">Username</label>
+                        <input type="text" class="form-control form-input" id="Username" name="Username" pattern="@("^[A-Za-z]{3,}$")" title="Username should have 3 or more letters and no symbols or numbers and should not contain any spaces." required>
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Password">Password</label>
+                        <input type="password" class="form-control form-input" id="Password" name="Password" pattern="@(".{6,}")" title="Password should be at least 6 characters long" required>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="email" class="form-control form-input" id="Email" name="Email" pattern="@("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\a-zA-Z]{2,4}")" title="Enter a valid email address" required>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="PhoneNumber">Phone Number</label>
+                        <input type="tel" class="form-control form-input" id="PhoneNumber" name="PhoneNumber" pattern="@("[0-9]{10}")" title="Enter a 10-digit phone number" required>
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="btn-container">
+                        <button type="submit" class="register-btn">Register</button>
+                        <button onclick="window.location.href = '/Loginpage';" class="login-btn">Login</button>
+
+                    </div>
+                </form>
+            </div>
+    </div>
+    <div class="right-container">
+        <div class="landing-image-container">
+                <img class="landing-img" src="https://res.cloudinary.com/imagniecloudstorage/image/upload/v1691743062/png-transparent-create-account-illustration_jgkmrr.png" alt="landing-image" />
+        </div>
+    </div>
+    
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

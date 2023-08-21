@@ -1,0 +1,173 @@
+﻿@page
+@model User.Pages.LoginpageModel
+@{
+    ViewData["Title"] = "Login Page";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            width: 100%;
+            margin-top:5%;
+            display: flex;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 2px;
+        }
+
+        .left-container {
+            width: 50%;
+        }
+
+        .right-container {
+            width: 80%;
+        }
+
+        .landing-image-container {
+            width: 100%;
+            object-fit: cover;
+            border-radius:10px;
+            padding: 5px;
+            margin-top: 40px;
+            background-color: #efeef7;
+        }
+
+        .landing-img {
+            width: 100%;
+            border-radius:10px;
+        }
+
+        .logo-img-container {
+            width: 40%;
+            object-fit: cover;
+            margin-right:5px;
+        }
+
+        .logo-img {
+            width: 100%;
+        }
+
+        .form-container {
+            width: 90%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+        }
+
+            .form-container h2 {
+                margin-bottom: 10px;
+                font-size: 2.3rem;
+                text-align: center;
+            }
+
+            .form-container p {
+                margin-bottom: 20px;
+                font-size: 1.2rem;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+        label {
+            font-weight: bold;
+        }
+
+        .form-input {
+            display: flex;
+        }
+
+        .login-btn {
+            border-radius: 10px;
+            padding: 10px;
+            font-weight: 600;
+            color: white;
+            width: 100%;
+            background-color: #845ef2;
+            border: none;
+            font-size: 1.4rem;
+        }
+
+        .register-btn {
+            font-size: 1.4rem;
+            border-radius: 10px;
+            padding: 10px;
+            font-weight: 600;
+            color: black;
+            width: 100%;
+            background-color: #ededf9;
+            border: none;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>
+    @{
+        var jsCode = TempData["JavaScriptCode"] as string;
+        var consoleOutput = TempData["ConsoleOutput"] as string;
+    }
+
+    @section Scripts {
+        @if (!string.IsNullOrEmpty(jsCode))
+        {
+            <script>
+                @jsCode
+            </script>
+        }
+
+        <script>
+            console.log('@consoleOutput');
+        </script>
+    }
+
+</head>
+<body>
+
+    <div class="container ">
+        <div class="left-container">
+            <div class="logo-img-container">
+                <img class="logo-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pro-inspector.net%2Fwp-content%2Fuploads%2F2022%2F03%2Fpro-inspector-logo.png&f=1&nofb=1&ipt=ad69d25189a8218e47550ae5140ee476a11bcc7a853f9fde9cc286c5c06900bc&ipo=images" alt="Pro-Inspector" />
+            </div>
+            <div class="form-container mt-2">
+                <h2>Login</h2>
+                <p>Login now and unlock exclusive access!</p>
+                <form method="post">
+                    <div class="form-group mb-4 mt-2">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control form-input" required>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-4 mt-2">
+                        <label asp-for="Password"></label>
+                        <input asp-for="Password" type="password" class="form-control form-input" required>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="btn-container mb-4 mt-2">
+                        <button type="submit" class="login-btn">Login</button>
+                        
+                    </div>
+                </form>
+                <button onclick="window.location.href = '/Register';" class="register-btn">Register</button>
+            </div>
+        </div>
+        <div class="right-container ">
+            <div class="landing-image-container">
+                <img class="landing-img" src="https://images.pexels.com/photos/5882705/pexels-photo-5882705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1.png" alt="landing-image" />
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

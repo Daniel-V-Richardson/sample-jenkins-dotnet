@@ -1,0 +1,65 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+
+<!DOCTYPE html>
+<html>
+   <head>
+    <script src="https://kit.fontawesome.com/8a005103e9.js" crossorigin="anonymous"></script>
+   </head>
+   <body>
+    <div class="card cardEl">
+        <div class="card-body">
+            <div class="container-fluid">
+                <div class="row d-flex align-items-center">
+                    <div class="col-1"><img src="~/src/images/profile.png" alt="Load again" style="width:20px;height:20px" /></div>
+                    <div class="col pt-3"><p class="fw-bold fs-4">Auditor</p></div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <p id="welcome-text" class="fw-normal fs-6 textEl">
+                    With Auditor it’s no longer up to me to create the inspection and collect the signatures from the inspector and manager, now I don’t need to print the report on paper and send it to the customer    
+                </p>
+            </div>
+            <div class="container-fluid my-2">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <button type="button" class="btn btn-secondary btn-sm col me-1" onclick="sayHi()">Current User</button>
+                    <button type="button" class="btn btn-secondary btn-sm col" onclick="checkList()">Request a CheckList</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sayHi() {
+            // Make the API call to the .NET Core web app endpoint
+            fetch('/current-user')
+                .then(response => response.text())
+                .then(data => {
+                    // `data` will contain the response from the API
+                    document.getElementById('welcome-text').textContent = data; // You can use this data as needed, e.g., display in an alert
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+        const checkList = async()=>{
+            fetch('/fetch-from-checklist')
+                .then(response => response.text())
+                .then(data => {
+                    // `data` will contain the response from the API
+                    document.getElementById('welcome-text').textContent = data; // You can use this data as needed, e.g., display in an alert
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+
+   </body>
+</html>
+
+

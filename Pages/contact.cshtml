@@ -1,0 +1,82 @@
+@page
+@model User.Pages.contactModel
+
+@{
+
+}
+
+<style>
+    input[type=text], select {
+  width: 70%;
+  height:20%;
+    }
+  input[type=email], select {
+  width: 70%;
+  height:20%;
+  }
+      .container {
+            width:50%;
+            position: absolute;
+            top:20%;
+            left:20%;
+            display:flex;
+            background-color:white;
+            border-radius:20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding:10px;
+        }
+    textarea {
+  width: 70%;
+  height: 100px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+
+}
+
+    Set-Cookie: myCookie=myValue; SameSite=Lax
+
+ .form-container{
+            width:50%;
+            padding:20px;height:60%;
+            h
+            display:flex;
+            flex-direction:column;
+            margin:auto;
+ }
+button{
+    width: 30%;
+    color:solid black;
+}
+</style>
+<div class="container mt-5">
+    <div class="left-container">
+        <div class="logo-img-container">
+                <img class="logo-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pro-inspector.net%2Fwp-content%2Fuploads%2F2022%2F03%2Fpro-inspector-logo.png&f=1&nofb=1&ipt=ad69d25189a8218e47550ae5140ee476a11bcc7a853f9fde9cc286c5c06900bc&ipo=images"alt="Pro-Inspector" />
+        </div>
+ <div class="form-container">
+<center><h1>contact us</h1></center>
+<p>
+
+    <form method="post">
+
+<label for="Email" >Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="email"id="Email"name="Email" required ><br><br>
+<span asp-validation-for="Email"></span>
+<label>Subject:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text"name="Subject" id="Subject"><br><br>
+  
+                <span asp-validation-for="Subject"></span>
+<label style = "position:relative; left:-20px; top:-85px">Description:</label><textarea name="Description"id="Description"></textarea><br><br><br>
+                <span asp-validation-for="Description"></span>
+<button type="submit">Submit</button>
+                </form>
+
+</p>
+</div>
+    </div>
+
+
+

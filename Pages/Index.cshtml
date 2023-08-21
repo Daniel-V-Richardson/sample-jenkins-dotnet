@@ -1,0 +1,429 @@
+﻿@page
+@model User.Pages.IndexModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+   *{
+      margin:0;
+      padding:0;
+   }
+        .video-container {
+            width: 100%; 
+            overflow: hidden;
+        }
+
+        video {
+            position: absolute;
+            margin-top:80px;
+            left: 0;
+            width: 100%;
+            height: 90%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); 
+            z-index: 0; 
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left:50%;
+            width:80%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
+            z-index: 1; 
+        }
+
+        .logout-btn {
+            background-color: #845ef2;
+            padding: 20px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            font-weight: bold;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .small-title {
+            font-size:1.3rem;
+            font-weight:bold;
+            margin-top: 120px;
+            font-family: 'Cascadia Mono';
+            margin-bottom:50px;
+        }
+        .big-title {
+            font-size: 4rem;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-bottom: 50px;
+        }
+        .sub-title {
+            margin-bottom:50px;
+        }
+
+        .book-a-demo-btn {
+            padding:25px;
+            font-size:1.3rem;
+            margin-top:40px;
+            border-radius: 10px;
+            color:white;
+            background-color: #0072f7;
+            border:none;
+        }
+        .content-container {
+            display:flex;
+            flex-direction:column;
+            margin-top:50%;
+            padding:20px;
+            width:100%;
+            height:100%;
+        }.first-content{
+            display:flex;
+            padding-left:100px;
+            margin:auto;
+            text-align:center;
+            font-size:1.5rem;
+            align-items:center;
+            font-weight:bold;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding-right:50px;
+            flex-direction:row;
+        }
+        .img-container {
+            width:60%;
+            object-fit:cover;
+        }
+        .image {
+        width:100%;
+        }
+        
+        .second-content{
+            display:flex;
+            flex-direction:column;
+            text-align:center;
+            align-items:center;
+            margin:auto;
+            gap:40px;
+            padding-left:10%;
+            font-size:1.5rem;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding-right:10%;
+        }
+        .cards-container {
+            display:flex;
+            width:100%;
+            gap:30px;
+            flex-wrap:wrap;
+        }
+        .card {
+            width:300px;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+         
+        }
+
+        .card-img-caontainer {
+            width:40%;
+            object-fit:cover;
+        }
+        .card-img {
+            width:100%;
+        }
+        span {
+            text-align:center;
+            justify-content:center;
+            align-items:center;
+            align-self:center;
+            margin:auto;
+            font-size:1rem;
+            width:60%;
+        }
+    </style>
+</head>
+<body>
+<partial name="Nav" />
+    <div class="video-container">
+        <video src="https://pro-inspector.net//wp-content//uploads//2022//03//pro-inspector-banner-video.mp4" autoplay muted loop>
+        </video>
+        <div class="overlay"></div>
+        <div class="text-overlay">
+            <div class="small-title">
+                P R O I N S P E C T O R
+            </div>
+            <h1 class="big-title">Pro-Inspector Is An Improvement Focused Audit Management App</h1>
+            <h3 class="sub-title">Get the safety audit done at lightning speed.</h3>
+            <button class="book-a-demo-btn">BOOK A DEMO</button>
+        </div>
+        @*<form method="post">
+            <button class="logout-btn" type="submit">
+                Logout
+            </button>
+        </form>*@
+        <div class="content-container">
+            <div class="first-content">
+                    <h1>Empower your business with the best audit software.</h1>
+                    <div class="img-container">
+                        <img src="https://pro-inspector.net/wp-content/uploads/2022/03/Empower-your-business-with-the-best-audit-software.jpg" class="image"/>
+                    </div>
+            </div>
+            <div class="second-content">
+                 <h1>Our Verticals</h1>
+                 <div class="cards-container">
+
+                      <div class="card">
+                         <div class="card-img-caontainer">
+                            <img src="https://pro-inspector.net/wp-content/uploads/2022/03/icon-educational-institutions.png" class="card-img" />
+                         </div>
+                         <span>Automotive Industry</span>
+                     </div>
+
+                     <div class="card">
+                         <div class="card-img-caontainer">
+                            <img src="https://pro-inspector.net/wp-content/uploads/2022/03/automotiveindustry.png" class="card-img" />
+                         </div>
+                         <span>Aviation</span>
+                     </div>
+
+                    <div class="card">
+                        <div class="card-img-caontainer">
+                            <img src="https://pro-inspector.net/wp-content/uploads/2022/03/constructionrealestate.png" class="card-img" />
+                        </div>
+                        <span>Construction and Real Estate</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-img-caontainer">
+                            <img src="https://pro-inspector.net/wp-content/uploads/2022/03/facilitymanagement.png" class="card-img" />
+                        </div>
+                        <span>Facility Management</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-img-caontainer">
+                            <img src="https://pro-inspector.net/wp-content/uploads/2022/03/foodandbeverages.png" class="card-img" />
+                        </div>
+                        <span>Food & Beverage</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-img-caontainer">
+                            <img src="https://pro-inspector.net/wp-content/uploads/2022/03/healthandsafety.png" class="card-img" />
+                        </div>
+                        <span>Health and Safety</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-img-caontainer">
+                            <img src="https://pro-inspector.net/wp-content/uploads/2022/03/icon-educational-institutions.png" class="card-img" />
+                        </div>
+                        <span>Hospitality</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-img-caontainer">
+                            <img src="https://pro-inspector.net/wp-content/uploads/2022/03/manufacturing.png" class="card-img" />
+                        </div>
+                        <span>Manufacturing</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-img-caontainer">
+                            <img src="https://pro-inspector.net/wp-content/uploads/2022/03/oilandgas.png" class="card-img" />
+                        </div>
+                        <span>Oil And Gas</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-img-caontainer">
+                            <img src="https://pro-inspector.net/wp-content/uploads/2022/03/retailandfranchise.png" class="card-img" />
+                        </div>
+                        <span>Retail and Franchise</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-img-caontainer">
+                            <img src="https://pro-inspector.net/wp-content/uploads/2022/03/transportandlogistics.png" class="card-img" />
+                        </div>
+                        <span>Transport and Logistics</span>
+                    </div>
+                 </div>
+            </div>
+            <style>
+                .third-content {
+                    width:100%;
+                    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    display:flex;
+                    align-items:center;
+                    margin:auto;
+                    margin-top:40px;
+                    margin-bottom:40px;
+                    justify-content:center;
+                    height:200px;
+                    background-color: #f9f9ff;
+                }
+
+                .third-content-item{
+                    width:20%;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    gap:50px;
+                }
+                .third-content-img {
+                    width:90px;
+                }
+            </style>
+            <div class="third-content">
+                <div class="third-content-item">
+                    <img class="third-content-img" src="https://pro-inspector.net/wp-content/uploads/2022/03/globe-150x150.png" />
+                    <div class="third-content-title">
+                        <h1>5+</h1>
+                        <h4>Countries</h4>
+                    </div>
+                </div>
+
+                <div class="third-content-item">
+                    <img class="third-content-img" src="https://pro-inspector.net/wp-content/uploads/2022/03/search.png" />
+                    <div class="third-content-title">
+                        <h1>5M +</h1>
+                        <h4>Projects Done</h4>
+                    </div>
+                </div>
+
+                <div class="third-content-item">
+                    <img class="third-content-img" src="https://pro-inspector.net/wp-content/uploads/2022/03/growth.png" />
+                    <div class="third-content-title">
+                        <h1>4M +</h1>
+                        <h4>Get Rewards</h4>
+                    </div>
+                </div>
+
+                <div class="third-content-item">
+                    <img class="third-content-img" src="https://pro-inspector.net/wp-content/uploads/2022/03/inspection.png" />
+                    <div class="third-content-title">
+                        <h1>9 +</h1>
+                        <h4>Industry Vertical</h4>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .fourth-content {
+                    padding-top:50px;
+                    padding-bottom:50px;
+                    align-items:center;
+                    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    color:white;
+                    font-weight:bold;
+                    display:flex;
+                    font-size:1.5rem;
+                    flex-direction:column;
+                    background-color: #1c2e4c;
+                }
+                .fourth-content h1 {
+                    margin-bottom:50px;
+                }
+                .fourth-content-img {
+                    width:70%;
+                }
+            </style>
+            <div class="fourth-content">
+                <h1>Why Choose Pro-Inspector</h1>
+                <img class="fourth-content-img" src="https://pro-inspector.net/wp-content/uploads/2022/03/whychooseproinspector.png" />
+                <button class="book-a-demo-btn">MORE FEATURES</button>
+            </div>
+            <style>
+                .fifth-content h1{
+                    margin-top:60px;
+                    text-align:center;
+                }
+                .testimonial-container {
+                    display: flex;
+                    justify-content: center;
+                    overflow: hidden;
+                    margin-top: 30px;
+                }
+
+                .testimonial-slider {
+                    display: flex;
+                    transition: transform 0.5s ease-in-out;
+                }
+
+                .testimonial-card {
+                    width: 450px; /* Adjust the width as needed */
+                    background-color: #f1f1f1;
+                    border-radius: 10px;
+                    padding: 20px;
+                    text-align: center;
+                    margin: 0 10px; /* Add some margin between cards */
+                }
+
+                .testimonial-image {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    margin: 0 auto 10px;
+                }
+            </style>
+
+
+            <div class="fifth-content">
+                <h1>Clients Testimonials</h1>
+                <div class="testimonial-container">
+                    <div class="testimonial-slider">
+                        <div class="testimonial-card">
+                            <img src="testimonial-image-1.jpg" alt="Client 1" class="testimonial-image">
+                            <p class="testimonial-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus consectetur tristique."</p>
+                            <p class="testimonial-client">- Client 1</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <img src="testimonial-image-2.jpg" alt="Client 2" class="testimonial-image">
+                            <p class="testimonial-text">"Praesent bibendum eget libero vel blandit. Proin id sapien euismod, bibendum tortor vel, tempor augue."</p>
+                            <p class="testimonial-client">- Client 2</p>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                const testimonialSlider = document.querySelector('.testimonial-slider');
+                const testimonialCards = document.querySelectorAll('.testimonial-card');
+                let currentIndex = 0;
+
+                function slideTestimonial() {
+                    currentIndex = (currentIndex + 1) % testimonialCards.length;
+                    testimonialSlider.style.transform = `translateX(-${currentIndex * 470}px)`; // Adjust the value to match card width and margin
+                }
+
+                setInterval(slideTestimonial, 5000);
+            </script>
+
+        </div>
+    </div>
+</body>
+</html>
+
+
+        
