@@ -8,9 +8,9 @@ pipeline {
         pollSCM '* * * * *'
     }
     stages {
-        stage('Build') {    
+        stage('Build') {
             tools {
-                        dotnetsdk 'dotnet-sdk-6.0'
+                dotnetsdk 'dotnet-sdk-6.0'
             }
             steps {
                 echo 'Building..'
