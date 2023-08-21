@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'docker-dotnet-agent'
+            label 'built-in'
         }
     }
     triggers {
