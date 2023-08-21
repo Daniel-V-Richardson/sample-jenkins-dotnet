@@ -1,16 +1,19 @@
 pipeline {
-    agent { 
+    agent {
         node {
             label 'docker-dotnet-agent'
-            }
-      }
+        }
+    }
     triggers {
         pollSCM '* * * * *'
     }
     stages {
-        stage('Build') {
+        stage('Build') {    
+            tools {
+                        dotnetsdk 'dotnet-sdk-6.0'
+            }
             steps {
-                echo "Building.."
+                echo 'Building..'
                 sh '''
                 dotnet build User.sln
                 '''
@@ -18,7 +21,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "Testing.."
+                echo 'Testing..'
                 sh '''
                 echo "Testing Successfull.."
                 '''
