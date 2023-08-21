@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh '''
-                dotnet build User.sln
+                dotnet build User.csproj
                 '''
             }
         }
